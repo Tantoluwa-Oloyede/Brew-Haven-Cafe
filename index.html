@@ -3,147 +3,348 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Brew Haven - Premium Coffee Experience</title>
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Announcement Banner -->
+    <div class="announcement-banner">
+        Limited Time: Get 20% off on all pastries this week!
+    </div>
+
     <header class="header-nav" id="main-header">
         <div class="container">
             <div class="logo">☕ Brew Haven</div>
-            <nav role="navigation" aria-label="Main navigation">
-                <ul>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav>
+                <ul id="navMenu">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About Us</a></li>
                     <li><a href="#menu">Menu</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#testimonials">Reviews</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
+    <div class="cart-icon" id="cartIcon">
+        🛒
+        <span class="cart-count" id="cartCount">0</span>
+    </div>
+
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-content">
+            <span class="close-cart" id="closeCart">&times;</span>
+            <h2>Your Cart</h2>
+            <div class="cart-items" id="cartItems">
+                <p style="text-align: center; color: #999;">Your cart is empty</p>
+            </div>
+            <div class="cart-total" id="cartTotal">Total: $0.00</div>
+            <button class="btn" style="width: 100%; margin-top: 1rem;">Proceed to Checkout</button>
+        </div>
+    </div>
+
     <main>
-        <section class="hero" id="home" aria-label="Brew Haven Welcome">
+        <section class="hero" id="home">
+            <div class="particle" style="top: 20%; left: 10%; animation-delay: 0s;"></div>
+            <div class="particle" style="top: 60%; left: 80%; animation-delay: 5s;"></div>
+            <div class="particle" style="top: 40%; left: 60%; animation-delay: 10s;"></div>
             <div class="hero-content">
-                <h1 class="reveal-element">Welcome to Brew Haven</h1>
-                <p class="reveal-element">Experience the finest ethically sourced coffee and freshly baked pastries.</p>
-                <a href="#menu" class="btn reveal-element" role="button">Explore Menu Today</a>
+                <h1>Welcome to Brew Haven</h1>
+                <p>Experience the finest ethically sourced coffee and freshly baked pastries.</p>
+                <a href="#menu" class="btn">Explore Menu Today</a>
             </div>
         </section>
 
-        <section class="about" id="about" aria-labelledby="about-title">
+        <section class="stats">
             <div class="container">
-                <h2 id="about-title" class="section-title reveal-element">Our Story & Passion</h2>
+                <div class="stats-grid">
+                    <div class="stat-item reveal-element">
+                        <div class="stat-number" data-target="5000">0</div>
+                        <div class="stat-label">Happy Customers</div>
+                    </div>
+                    <div class="stat-item reveal-element">
+                        <div class="stat-number" data-target="50">0</div>
+                        <div class="stat-label">Coffee Varieties</div>
+                    </div>
+                    <div class="stat-item reveal-element">
+                        <div class="stat-number" data-target="15">0</div>
+                        <div class="stat-label">Expert Baristas</div>
+                    </div>
+                    <div class="stat-item reveal-element">
+                        <div class="stat-number" data-target="4">0</div>
+                        <div class="stat-label">Years of Excellence</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about" id="about">
+            <div class="container">
+                <h2 class="section-title reveal-element">Our Story & Passion</h2>
                 <p class="section-subtitle reveal-element">From bean to cup, quality and sustainability is our promise.</p>
                 <div class="about-content">
-                    <div class="about-image-wrapper reveal-element">
-                        </div>
+                    <div class="about-image-wrapper reveal-element"></div>
                     <div class="about-text reveal-element">
                         <p>Founded in 2020, Brew Haven was born from a simple yet profound love for the perfect cup. We are dedicated to providing a serene 'haven' where the community can connect, work, and relax.</p>
                         <br>
-                        <p>Our commitment extends beyond our walls. We **ethically source our beans** from sustainable farms in South America and Africa, ensuring every sip supports fair trade practices and environmental stewardship. This dedication to quality and social responsibility is what sets us apart.</p>
+                        <p>Our commitment extends beyond our walls. We ethically source our beans from sustainable farms in South America and Africa, ensuring every sip supports fair trade practices and environmental stewardship.</p>
                         <br>
-                        <a href="#contact" class="btn" role="button" style="margin-top: 1rem;">Visit Us</a>
+                        <a href="#contact" class="btn">Visit Us</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="menu" id="menu" aria-labelledby="menu-title">
+        <section class="special-offers">
             <div class="container">
-                <h2 id="menu-title" class="section-title reveal-element">The Brew & The Bites</h2>
+                <h2 class="section-title" style="color: white;">Special Offers This Week</h2>
+                <p class="section-subtitle" style="color: rgba(255,255,255,0.8);">Limited time deals you don't want to miss</p>
+                <div class="offers-grid">
+                    <div class="offer-card reveal-element">
+                        <div class="offer-badge">20% OFF</div>
+                        <div class="offer-title">All Pastries</div>
+                        <p>Enjoy our freshly baked croissants, muffins, and cakes at 20% off this entire week!</p>
+                    </div>
+                    <div class="offer-card reveal-element">
+                        <div class="offer-badge">HAPPY HOUR</div>
+                        <div class="offer-title">2-for-1 Coffee</div>
+                        <p>Buy one coffee, get one free! Every weekday from 2PM to 4PM.</p>
+                    </div>
+                    <div class="offer-card reveal-element">
+                        <div class="offer-badge">NEW</div>
+                        <div class="offer-title">Loyalty Program</div>
+                        <p>Join our rewards program and get a free drink after every 10 purchases!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="menu" id="menu">
+            <div class="container">
+                <h2 class="section-title reveal-element">The Brew & The Bites</h2>
                 <p class="section-subtitle reveal-element">Hand-crafted beverages and fresh daily bakes.</p>
+                
+                <div class="menu-filters reveal-element">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="coffee">Coffee</button>
+                    <button class="filter-btn" data-filter="food">Food</button>
+                    <button class="filter-btn" data-filter="drinks">Drinks</button>
+                </div>
+
                 <div class="menu-grid">
-                    <div class="menu-item reveal-element">
-                        <div class="menu-icon" aria-hidden="true">☕</div>
+                    <div class="menu-item reveal-element" data-category="coffee">
+                        <div class="menu-icon">☕</div>
                         <h3>Signature Espresso</h3>
                         <p>A double shot, rich, smooth, and perfectly balanced.</p>
                         <div class="price">$3.50</div>
+                        <button class="add-to-cart" data-name="Signature Espresso" data-price="3.50">Add to Cart</button>
                     </div>
-                    <div class="menu-item reveal-element">
-                        <div class="menu-icon" aria-hidden="true">🥐</div>
+                    <div class="menu-item reveal-element" data-category="food">
+                        <div class="menu-icon">🥐</div>
                         <h3>Almond Croissant</h3>
                         <p>Flaky, buttery, and dusted with toasted almonds.</p>
                         <div class="price">$4.80</div>
+                        <button class="add-to-cart" data-name="Almond Croissant" data-price="4.80">Add to Cart</button>
                     </div>
-                    <div class="menu-item reveal-element">
-                        <div class="menu-icon" aria-hidden="true">🍰</div>
+                    <div class="menu-item reveal-element" data-category="food">
+                        <div class="menu-icon">🍰</div>
                         <h3>Tiramisu Delight</h3>
                         <p>Layers of coffee-soaked ladyfingers and mascarpone.</p>
                         <div class="price">$7.00</div>
+                        <button class="add-to-cart" data-name="Tiramisu Delight" data-price="7.00">Add to Cart</button>
                     </div>
-                    <div class="menu-item reveal-element">
-                        <div class="menu-icon" aria-hidden="true">🥤</div>
+                    <div class="menu-item reveal-element" data-category="drinks">
+                        <div class="menu-icon">🥤</div>
                         <h3>Cold Brew Reserve</h3>
                         <p>Slow-steeped for 18 hours. Ultra-smooth and low acid.</p>
                         <div class="price">$5.50</div>
+                        <button class="add-to-cart" data-name="Cold Brew Reserve" data-price="5.50">Add to Cart</button>
                     </div>
-                    <div class="menu-item reveal-element">
-                        <div class="menu-icon" aria-hidden="true">🥪</div>
+                    <div class="menu-item reveal-element" data-category="food">
+                        <div class="menu-icon">🥪</div>
                         <h3>Artisan Sandwich</h3>
                         <p>Freshly prepared daily with locally sourced ingredients.</p>
                         <div class="price">$9.00</div>
+                        <button class="add-to-cart" data-name="Artisan Sandwich" data-price="9.00">Add to Cart</button>
                     </div>
-                    <div class="menu-item reveal-element">
-                        <div class="menu-icon" aria-hidden="true">🍵</div>
+                    <div class="menu-item reveal-element" data-category="drinks">
+                        <div class="menu-icon">🍵</div>
                         <h3>Matcha Latte</h3>
-                        <p>High-grade Japanese matcha, steamed milk (dairy/non-dairy).</p>
+                        <p>High-grade Japanese matcha with steamed milk.</p>
                         <div class="price">$5.80</div>
+                        <button class="add-to-cart" data-name="Matcha Latte" data-price="5.80">Add to Cart</button>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="contact" id="contact" aria-labelledby="contact-title">
+        <section class="gallery" id="gallery">
             <div class="container">
-                <h2 id="contact-title" class="section-title reveal-element">Connect With Us</h2>
+                <h2 class="section-title reveal-element">Our Atmosphere</h2>
+                <p class="section-subtitle reveal-element">Step inside and experience the Brew Haven ambiance</p>
+                <div class="gallery-grid">
+                    <div class="gallery-item reveal-element">
+                        <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=600&h=400&fit=crop" alt="Coffee Shop Interior">
+                        <div class="gallery-overlay">
+                            <h3>Cozy Interior</h3>
+                            <p>Perfect for work or relaxation</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item reveal-element">
+                        <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?w=600&h=400&fit=crop" alt="Latte Art">
+                        <div class="gallery-overlay">
+                            <h3>Artisan Crafted</h3>
+                            <p>Every cup is a masterpiece</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item reveal-element">
+                        <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600&h=400&fit=crop" alt="Coffee Beans">
+                        <div class="gallery-overlay">
+                            <h3>Premium Beans</h3>
+                            <p>Ethically sourced from around the world</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item reveal-element">
+                        <img src="https://images.unsplash.com/photo-1556881286-fc6915169721?w=600&h=400&fit=crop" alt="Fresh Pastries">
+                        <div class="gallery-overlay">
+                            <h3>Fresh Daily</h3>
+                            <p>Baked on-site every morning</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item reveal-element">
+                        <img src="https://images.unsplash.com/photo-1525610553991-2bede1a236e2?w=600&h=400&fit=crop" alt="Outdoor Seating">
+                        <div class="gallery-overlay">
+                            <h3>Outdoor Space</h3>
+                            <p>Enjoy your coffee al fresco</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item reveal-element">
+                        <img src="https://images.unsplash.com/photo-1453614512568-c4024d13c247?w=600&h=400&fit=crop" alt="Barista at Work">
+                        <div class="gallery-overlay">
+                            <h3>Expert Baristas</h3>
+                            <p>Passionate about the perfect brew</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials" id="testimonials">
+            <div class="container">
+                <h2 class="section-title reveal-element">What Our Customers Say</h2>
+                <p class="section-subtitle reveal-element">Real reviews from real coffee lovers</p>
+                <div class="testimonials-slider">
+                    <div class="testimonial active">
+                        <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                        <p class="testimonial-text">"The best coffee shop in Ibadan! The atmosphere is cozy, the staff is friendly, and the coffee is absolutely divine. I come here every morning before work."</p>
+                        <div class="testimonial-author">- Sarah Johnson</div>
+                    </div>
+                    <div class="testimonial">
+                        <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                        <p class="testimonial-text">"Brew Haven is my go-to spot for meetings and work sessions. The wifi is fast, the environment is quiet, and their cold brew is unmatched!"</p>
+                        <div class="testimonial-author">- Michael Chen</div>
+                    </div>
+                    <div class="testimonial">
+                        <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                        <p class="testimonial-text">"Their almond croissants are to die for! I've tried coffee shops all over Nigeria, and Brew Haven is hands down the best. Highly recommended!"</p>
+                        <div class="testimonial-author">- Amina Bello</div>
+                    </div>
+                </div>
+                <div class="slider-dots">
+                    <span class="dot active" data-slide="0"></span>
+                    <span class="dot" data-slide="1"></span>
+                    <span class="dot" data-slide="2"></span>
+                </div>
+            </div>
+        </section>
+
+        <section class="newsletter">
+            <div class="container">
+                <h2>Join Our Coffee Community</h2>
+                <p>Subscribe to get exclusive offers, coffee tips, and news about new menu items!</p>
+                <form class="newsletter-form" id="newsletterForm">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+                <p id="newsletter-message" style="margin-top: 1rem; display: none;"></p>
+            </div>
+        </section>
+
+        <section class="contact" id="contact">
+            <div class="container">
+                <h2 class="section-title reveal-element">Connect With Us</h2>
                 <p class="section-subtitle reveal-element" style="color: #ccc;">We'd love to hear from you. Send us a message or stop by!</p>
                 <div class="contact-content">
-                    <form class="contact-form reveal-element" onsubmit="handleSubmit(event)" aria-label="Contact form">
+                    <form class="contact-form reveal-element" id="contactForm">
                         <div class="form-group">
-                            <label for="name">Your Name*</label>
+                            <label for="name">Your Name</label>
                             <input type="text" id="name" name="name" placeholder="John Doe" required>
                         </div>
                         <div class="form-group">
-                            <label for="email">Your Email*</label>
+                            <label for="email">Your Email</label>
                             <input type="email" id="email" name="email" placeholder="john.doe@example.com" required>
                         </div>
                         <div class="form-group">
-                            <label for="message">Your Message*</label>
+                            <label for="message">Your Message</label>
                             <textarea id="message" name="message" placeholder="What can we help you with?" required></textarea>
                         </div>
                         <button type="submit" class="btn" style="width: 100%; cursor: pointer; border: none;">Send Message</button>
-                        <p id="form-message" style="margin-top: 1rem; color: var(--color-accent); font-weight: 700;"></p>
+                        <div id="form-message"></div>
                     </form>
                     <div class="contact-info reveal-element">
                         <div class="info-item">
-                            <span class="info-icon" aria-hidden="true">📍</span>
+                            <span class="info-icon">📍</span>
                             <div>
                                 <strong>Find Us</strong>
-                                <address>123 Coffee Street, Lagos, Nigeria</address>
+                                <address>Remote, Ibadan, Nigeria</address>
                             </div>
                         </div>
                         <div class="info-item">
-                            <span class="info-icon" aria-hidden="true">📞</span>
+                            <span class="info-icon">📞</span>
                             <div>
                                 <strong>Call Us</strong>
-                                <a href="tel:+2341234567890" style="color: white; text-decoration: none;">+234 123 456 7890</a>
+                                <a href="tel:+2349062826812" style="color: white; text-decoration: none;">+234 906 282 6812</a>
                             </div>
                         </div>
                         <div class="info-item">
-                            <span class="info-icon" aria-hidden="true">✉️</span>
+                            <span class="info-icon">✉️</span>
                             <div>
                                 <strong>Email Us</strong>
-                                <a href="mailto:hello@brewhaven.com" style="color: white; text-decoration: none;">hello@brewhaven.com</a>
+                                <a href="mailto:technologyinfinity85@gmail.com" style="color: white; text-decoration: none;">technologyinfinity85@gmail.com</a>
                             </div>
                         </div>
                         <div class="info-item">
-                            <span class="info-icon" aria-hidden="true">🕐</span>
+                            <span class="info-icon">🕐</span>
                             <div>
-                                <strong>Hours of Operation</strong>
-                                <span>Mon - Sat: 7:00 AM - 10:00 PM<br>Sunday: 8:00 AM - 8:00 PM</span>
+                                <strong>Hours</strong>
+                                <span>Mon-Sat: 7AM-10PM<br>Sun: 8AM-8PM</span>
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="social-proof">
+            <div class="container">
+                <h3 style="margin-bottom: 1rem; font-size: 1.5rem; color: var(--color-primary-dark);">Follow Us on Social Media</h3>
+                <div class="social-icons">
+                    <div class="social-icon">📘</div>
+                    <div class="social-icon">📷</div>
+                    <div class="social-icon">🐦</div>
+                    <div class="social-icon">▶️</div>
                 </div>
             </div>
         </section>
@@ -151,9 +352,12 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 Brew Haven Café. All rights reserved. | <span style="color: var(--color-accent);">Crafted by an aspiring Front-End Developer</span></p>
+            <p>&copy; 2025 Brew Haven Café. All rights reserved. | <span style="color: var(--color-accent);">Built with passion for coffee lovers</span></p>
         </div>
     </footer>
+
+    <div class="scroll-top" id="scrollTop">↑</div>
+
+    <script src="script.js"></script>
 </body>
-<script src="script.js"></script>
 </html>
